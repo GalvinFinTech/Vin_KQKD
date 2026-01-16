@@ -1,4 +1,11 @@
-# Block pipeline & private files
+# private pipeline
 sourcedata.py
 run_pipeline.py
 CP_active.xlsx
+
+# runtime state
+data_cache/meta/
+
+# python
+__pycache__/
+*.log
