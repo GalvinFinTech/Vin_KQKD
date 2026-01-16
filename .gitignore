@@ -1,3 +1,4 @@
-*
-!data_cache/
-!.gitignore
+# Block pipeline & private files
+sourcedata.py
+run_pipeline.py
+CP_active.xlsx
