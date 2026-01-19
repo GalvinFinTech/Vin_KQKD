@@ -663,8 +663,8 @@ def render_tab_data(df):
             fig.add_trace(go.Bar(x=df_h['Period'], y=df_h[m_k]*1000, name=m_n, marker_color=c_b, opacity=0.7), secondary_y=False)
             fig.add_trace(go.Scatter(x=df_h['Period'], y=df_h[f'{m_k}_YoY_Pct'], name="% YoY", line=dict(color=c_l, width=4), mode='markers+lines'), secondary_y=True)
             fig.update_layout(title=f"<b>Xu hướng {m_n}</b>", height=400, plot_bgcolor='rgba(0,0,0,0)', paper_bgcolor='rgba(0,0,0,0)', margin=dict(t=50, b=0, l=0, r=0), showlegend=False)
-            fig.update_yaxes(title_text="Tỷ VND", secondary_y=False)
-            fig.update_yaxes(tickformat='.0%', secondary_y=True)
+            fig.update_yaxes(title_text="Tỷ VND", secondary_y=False, showgrid=False)
+            fig.update_yaxes(tickformat='.0%', secondary_y=True, showgrid=False)
             st.plotly_chart(fig, use_container_width=True)
 
     # Historical Table
