@@ -682,7 +682,7 @@ def render_footer():
     st.markdown("<br><br>", unsafe_allow_html=True)
     st.markdown(f"""
         <div style="text-align: center; color: #94A3B8; font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; margin-bottom: 20px;">
-            Hệ thống được phát triển bởi Trung tâm Phân tích - Yuanta Securities Vietnam <br>
+            Hệ thống được phát triển bởi Phòng nghiên cứu phân tích - Khối Khách hàng cá nhân - Yuanta Securities Vietnam <br>
             Dữ liệu nguồn: VSTDataFeed | © {datetime.datetime.now().year} Terminal v1.0 Alpha
         </div>
     """, unsafe_allow_html=True)
