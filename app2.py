@@ -245,6 +245,9 @@ def render_market_trend_chart(df, year, quarter, metrics_map):
 
     df_clean = filter_upto_period(df, year, q_i)
     
+
+
+
     comp_name_map = {'YoY': 'YoY_Growth', 'QoQ': 'QoQ_Growth', 'YTD': 'YTD_Growth'}
     comp_label_map = {'YoY': 'CÙNG KỲ NĂM TRƯỚC (YoY)', 'QoQ': 'QUÝ TRƯỚC (QoQ)', 'YTD': 'LŨY KẾ ĐẦU NĂM (YTD)'}
     target_col = comp_name_map.get(c_sel)
