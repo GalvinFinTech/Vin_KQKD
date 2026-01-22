@@ -219,6 +219,13 @@ def calculate_growth_metrics(df):
     return df_res.drop(columns=[c for c in drop_cols if c in df_res.columns])
 
 
+def filter_upto_period(df, year, q_int):
+    return df[
+        (df['Nam'] < year) |
+        ((df['Nam'] == year) & (df['Q_int'] <= q_int))
+    ].copy()
+
+
 
 # =================================================================
 # III. RENDER LAYER: TAB 1 - TOÀN THỊ TRƯỜNG
@@ -236,7 +243,8 @@ def render_market_trend_chart(df, year, quarter, metrics_map):
     with col_t2: 
         c_sel = st.selectbox("Loại so sánh:", ['YoY', 'QoQ', 'YTD'], key='c_trend')
 
-    df_clean = df[(df['Nam'] < 2025) | ((df['Nam'] == 2025) & (df['Q_int'] <= 3))].copy()
+    df_clean = filter_upto_period(df, year, q_i)
+    
     comp_name_map = {'YoY': 'YoY_Growth', 'QoQ': 'QoQ_Growth', 'YTD': 'YTD_Growth'}
     comp_label_map = {'YoY': 'CÙNG KỲ NĂM TRƯỚC (YoY)', 'QoQ': 'QUÝ TRƯỚC (QoQ)', 'YTD': 'LŨY KẾ ĐẦU NĂM (YTD)'}
     target_col = comp_name_map.get(c_sel)
