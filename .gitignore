@@ -9,3 +9,4 @@ data_cache/meta/
 # python
 __pycache__/
 *.log
+ .env
